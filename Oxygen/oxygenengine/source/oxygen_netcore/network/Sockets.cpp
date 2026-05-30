@@ -33,7 +33,7 @@
 
 #endif
 
-#ifdef __vita__
+#ifdef __3DS__
 	#define SOMAXCONN 4096
 #endif
 
@@ -154,7 +154,7 @@ void SocketAddress::assureSockAddr() const
 	{
 		memset(&mSockAddr, 0, sizeof(mSockAddr));
 		bool success = false;
-	#if !defined(PLATFORM_SWITCH)	// The IPv6 part won't compile on Switch, but isn't really needed there anyways
+	#if !defined(PLATFORM_3DS)	// The IPv6 part won't compile on Switch, but isn't really needed there anyways			it doesn't compile on 3ds either haha
 		{
 			// IPv6
 			sockaddr_in6& addr = *reinterpret_cast<sockaddr_in6*>(&mSockAddr);

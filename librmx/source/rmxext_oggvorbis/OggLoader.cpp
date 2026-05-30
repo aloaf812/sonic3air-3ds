@@ -210,13 +210,13 @@ bool OggLoader::updateStreaming()
 	if (nullptr != mAudioBuffer)
 	{
 		// Read fully decoded data if possible
-		float** pcm;
+		ogg_int32_t** pcm;
 		const int memcount = vorbis_synthesis_pcmout(&mVorbisDspState, &pcm);
 		if (memcount > 0)
 		{
 			// Fill output audio buffer
 			int samples = memcount;
-			float* source[2];
+			ogg_int32_t* source[2];
 			source[0] = pcm[0];
 			source[1] = (mVorbisInfo.channels >= 2) ? pcm[1] : pcm[0];
 
@@ -234,8 +234,20 @@ bool OggLoader::updateStreaming()
 					mSkipAudioSampleOutput = 0;
 				}
 
+				// tremor shenanigans
+				float* tempBufferL = (float*)alloca(samples * sizeof(float));
+				float* tempBufferR = (float*)alloca(samples * sizeof(float));
+
+				for (int i = 0; i < samples; ++i)
+				{
+					tempBufferL[i] = (float)source[0][i] / 16777216.0f;
+					tempBufferR[i] = (float)source[1][i] / 16777216.0f;
+				}
+
+				float* convertedSource[2] = { tempBufferL, tempBufferR };
+
 				mAudioBuffer->lock();
-				mAudioBuffer->addData(source, samples);
+				mAudioBuffer->addData(convertedSource, samples);
 				mAudioBuffer->unlock();
 			}
 
@@ -407,7 +419,7 @@ int OggLoader::seekInternal(float targetTime, std::streamsize& rangeMin, std::st
 					if (phase == 1)
 					{
 						// Phase 1: Check if we're roughly at the right position, and find out what's the granule position just before the target time
-						const float foundTime = (float)vorbis_granule_time(&mVorbisDspState, oggPacket.granulepos);
+						const float foundTime = (float)oggPacket.granulepos / mVorbisDspState.vi->rate;
 						if (granulePosFormer == -1)
 						{
 							// Too early?
@@ -468,7 +480,7 @@ float OggLoader::getVorbisPosition()
 {
 	if (!mIsStreaming)
 		return 0.0f;
-	return (float)vorbis_granule_time(&mVorbisDspState, mVorbisGranulePos);
+	return (float)mVorbisGranulePos / mVorbisDspState.vi->rate;
 }
 
 float OggLoader::getFilePosition()

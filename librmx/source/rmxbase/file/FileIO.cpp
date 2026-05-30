@@ -40,7 +40,7 @@
 	#include <dirent.h>
 	#include <sys/stat.h>
 
-#elif defined(PLATFORM_ANDROID) || defined(PLATFORM_SWITCH) || defined(PLATFORM_IOS) || defined(PLATFORM_VITA)
+#elif defined(PLATFORM_ANDROID) || defined(PLATFORM_SWITCH) || defined(PLATFORM_IOS) || defined(PLATFORM_VITA) || defined(PLATFORM_3DS)
 	// This requires Android NDK 22
 	#include <filesystem>
 	namespace std_filesystem = std::filesystem;

@@ -1,0 +1,2 @@
+/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc-ar.exe qc libminizip.a CMakeFiles/minizip.dir/c/Users/aloaf/Documents/GitHub/sonic3air/framework/external/zlib/zlib/contrib/minizip/ioapi.o CMakeFiles/minizip.dir/c/Users/aloaf/Documents/GitHub/sonic3air/framework/external/zlib/zlib/contrib/minizip/unzip.o CMakeFiles/minizip.dir/c/Users/aloaf/Documents/GitHub/sonic3air/framework/external/zlib/zlib/contrib/minizip/zip.o
+/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc-ranlib.exe libminizip.a

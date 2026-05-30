@@ -122,7 +122,7 @@ void RenderPlaneShader::draw(const PlaneGeometry& geometry, int waterSurfaceHeig
 
 	if (mHorizontalScrolling)
 	{
-		glActiveTexture(GL_TEXTURE3);
+		// glActiveTexture(GL_TEXTURE3);
 		resources.getHScrollOffsetsTexture(geometry.mScrollOffsets).bindTexture();
 	}
 	else
@@ -139,7 +139,7 @@ void RenderPlaneShader::draw(const PlaneGeometry& geometry, int waterSurfaceHeig
 
 	if (mVerticalScrolling)
 	{
-		glActiveTexture(GL_TEXTURE4);
+		// glActiveTexture(GL_TEXTURE4);
 		resources.getVScrollOffsetsTexture(geometry.mScrollOffsets).bindTexture();
 
 		glUniform1i(mLocVScrollOffsetBias, renderParts.getScrollOffsetsManager().getVerticalScrollOffsetBias());

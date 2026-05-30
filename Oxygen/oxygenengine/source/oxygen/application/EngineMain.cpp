@@ -40,6 +40,9 @@
 	#define LOAD_APP_ICON_PNG
 #endif
 
+#if defined(PLATFORM_3DS)
+	#include <citro3d.h>
+#endif
 
 struct EngineMain::Internal
 {
@@ -92,7 +95,7 @@ EngineMain::~EngineMain()
 
 void EngineMain::execute(int argc, char** argv)
 {
-	#if !defined(PLATFORM_VITA)
+	#if !defined(PLATFORM_3DS)
 	// Setup arguments
 	mArguments.reserve(argc);
 	for (int i = 0; i < argc; ++i)
@@ -230,7 +233,7 @@ bool EngineMain::startupEngine()
 		return false;
 
 	std::wstring argumentProjectPath;
-#if !defined(PLATFORM_ANDROID) && !defined(PLATFORM_VITA)
+#if !defined(PLATFORM_ANDROID) && !defined(PLATFORM_3DS)
 	// Parse arguments
 	for (size_t i = 1; i < mArguments.size(); ++i)
 	{
@@ -374,7 +377,7 @@ void EngineMain::initDirectories()
 	const EngineDelegateInterface::AppMetaData& appMetaData = mDelegate.getAppMetaData();
 	Configuration& config = Configuration::instance();
 
-#if !defined(PLATFORM_ANDROID) && !defined(PLATFORM_VITA)
+#if !defined(PLATFORM_ANDROID) && !defined(PLATFORM_3DS)
 	config.mExePath = *String(mArguments[0]).toWString();
 #endif
 
@@ -388,6 +391,9 @@ void EngineMain::initDirectories()
 	#elif defined(PLATFORM_VITA)
 		// Vita
 		config.mAppDataPath = L"ux0:data/sonic3air/savedata/";
+	#elif defined(PLATFORM_3DS)
+		// 3DS
+		config.mAppDataPath = L"sdmc:/3ds/sonic3air/savedata/";
 	#elif !defined(PLATFORM_IOS)
 		// Choose app data path
 		{
@@ -494,7 +500,7 @@ bool EngineMain::initConfigAndSettings(const std::wstring& argumentProjectPath)
 	if (config.mRenderMethod > Configuration::getHighestSupportedRenderMethod())
 		config.mRenderMethod = Configuration::getHighestSupportedRenderMethod();
 
-#if defined(PLATFORM_ANDROID) || defined(PLATFORM_IOS) || defined(PLATFORM_VITA)
+#if defined(PLATFORM_ANDROID) || defined(PLATFORM_IOS) || defined(PLATFORM_VITA) || defined(PLATFORM_3DS)
 	// Use fullscreen, with no borders please
 	//  -> Note that this doesn't work for the web version, if running in mobile browsers - we rely on a window with fixed size (see config.json) there
 	config.mWindowMode = Configuration::WindowMode::EXCLUSIVE_FULLSCREEN;
@@ -707,10 +713,16 @@ bool EngineMain::createWindow()
 			}
 		}
 
+		// this is to make it not crash while creating the SDL window
+		#ifdef __3DS__
+    	flags &= ~SDL_WINDOW_OPENGL; 
+		#endif
+
 		RMX_LOG_INFO("Creating window...");
 		mSDLWindow = SDL_CreateWindow(*videoConfig.mCaption, SDL_WINDOWPOS_CENTERED_DISPLAY(displayIndex), SDL_WINDOWPOS_CENTERED_DISPLAY(displayIndex), videoConfig.mWindowRect.width, videoConfig.mWindowRect.height, flags);
 		if (nullptr == mSDLWindow)
 		{
+			RMX_LOG_INFO(SDL_GetError());
 			return false;
 		}
 
@@ -718,21 +730,51 @@ bool EngineMain::createWindow()
 		SDL_GetWindowSize(mSDLWindow, &videoConfig.mWindowRect.width, &videoConfig.mWindowRect.height);
 		SDL_ShowCursor(!videoConfig.mHideCursor);
 
+		// 4. Handle OpenGL / GLASS Context Creation
 		if (useOpenGL)
 		{
-			RMX_LOG_INFO("Creating OpenGL context...");
-			SDL_GLContext context = SDL_GL_CreateContext(mSDLWindow);
-			if (nullptr != context)
-			{
-				RMX_LOG_INFO("Vsync setup...");
-				setVSyncMode(config.mFrameSync);
-			}
-			else
-			{
-				RMX_LOG_INFO("Failed to create OpenGL context, fallback to pure software renderer");
-				config.mRenderMethod = Configuration::RenderMethod::SOFTWARE;
-				// TODO: In this case, the SDL window was created with SDL_WINDOW_OPENGL flag, but that does not seem to be a problem
-			}
+		    #if defined(PLATFORM_3DS)
+		        RMX_LOG_INFO("Creating 3DS OpenGL context...");
+		        gfxInitDefault();
+    			C3D_Init(C3D_DEFAULT_CMDBUF_SIZE);
+				kygxInit(); 
+		        
+				// Create context.
+    			GLASSCtx ctx = glassCreateDefaultContext(GLASS_VERSION_ES_2);
+    			glassBindContext(ctx);
+
+    			glViewport(0, 0, 400, 240);
+				
+    			GLuint vbos[2];
+    			glGenBuffers(2, vbos);
+		
+		        if (ctx)
+		        {
+		            RMX_LOG_INFO("Vsync setup...");
+		            setVSyncMode(config.mFrameSync);
+		        }
+		        else
+		        {
+		            RMX_LOG_INFO("Failed to create OpenGL context, fallback to pure software renderer");
+		            config.mRenderMethod = Configuration::RenderMethod::SOFTWARE;
+		            C3D_Fini();
+		            gfxExit();
+		        }
+		    #else
+		        RMX_LOG_INFO("Creating OpenGL context...");
+		        SDL_GLContext context = SDL_GL_CreateContext(mSDLWindow);
+		        if (nullptr != context)
+		        {
+		            RMX_LOG_INFO("Vsync setup...");
+		            setVSyncMode(config.mFrameSync);
+		        }
+		        else
+		        {
+		            RMX_LOG_INFO("Failed to create OpenGL context, fallback to pure software renderer");
+		            config.mRenderMethod = Configuration::RenderMethod::SOFTWARE;
+					// TODO: In this case, the SDL window was created with SDL_WINDOW_OPENGL flag, but that does not seem to be a problem
+		        }
+		    #endif
 		}
 	}
 

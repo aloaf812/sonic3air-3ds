@@ -1,0 +1,13 @@
+prefix=/opt/devkitpro/portlibs/3ds
+exec_prefix=/opt/devkitpro/portlibs/3ds
+libdir=/opt/devkitpro/portlibs/3ds/lib
+sharedlibdir=/opt/devkitpro/portlibs/3ds/lib
+includedir=/opt/devkitpro/portlibs/3ds/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.12
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

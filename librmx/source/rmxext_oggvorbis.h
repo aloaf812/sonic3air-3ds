@@ -21,7 +21,7 @@
 #endif
 
 // General includes
-#include <vorbis/codec.h>
+#include <tremor/ivorbiscodec.h>
 #include <rmxmedia.h>
 
 // RMX modules

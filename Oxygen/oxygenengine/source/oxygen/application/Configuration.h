@@ -151,8 +151,8 @@ public:
 
 	// Video
 	WindowMode mWindowMode = WindowMode::WINDOWED;
-	#if defined(PLATFORM_VITA)
-		Vec2i mWindowSize = Vec2i(960, 544);
+	#if defined(PLATFORM_3DS)
+		Vec2i mWindowSize = Vec2i(400, 240);
 	#else
 		Vec2i mWindowSize = Vec2i(1200, 672);
 	#endif

@@ -34,8 +34,11 @@ bool Shader::compile(const String& vsSource, const String& fsSource, const std::
 	mFragmentSource = fsSource;
 	if (!compileShader(GL_VERTEX_SHADER, mVertexShader, vsSource))
 		return false;
+
+	#if !defined(PLATFORM_3DS)
 	if (!compileShader(GL_FRAGMENT_SHADER, mFragmentShader, fsSource))
 		return false;
+	#endif
 
 	// Link to a program
 	if (!linkProgram(vertexAttribMap))
@@ -193,13 +196,15 @@ bool Shader::compileShader(GLenum shaderType, GLuint& shaderHandle, const String
 		return true;
 
 	// Error output
+	#if !defined(PLATFORM_3DS)
 	mCompileLog << "Error(s) compiling " << ((shaderType == GL_FRAGMENT_SHADER) ? "fragment" : "vertex") << " shader:\n";
+	#endif
 	GLint maximumLogLength = 0;
 	glGetShaderiv(shaderHandle, GL_INFO_LOG_LENGTH, &maximumLogLength);
 	if (maximumLogLength > 1)
 	{
 		String infolog;
-		infolog.expand(maximumLogLength);
+		infolog.expand((int)maximumLogLength);
 		GLsizei logLength = 0;
 		glGetShaderInfoLog(shaderHandle, maximumLogLength, &logLength, (GLchar*)*infolog);
 		infolog.recount();
@@ -237,7 +242,7 @@ bool Shader::linkProgram(const std::map<int, String>* vertexAttribMap)
 	if (maximumLogLength > 1)
 	{
 		String infolog;
-		infolog.expand(maximumLogLength);
+		infolog.expand((int)maximumLogLength);
 		GLsizei logLength = 0;
 		glGetProgramInfoLog(mProgram, maximumLogLength, &logLength, (GLchar*)*infolog);
 		infolog.recount();

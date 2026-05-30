@@ -85,6 +85,10 @@
 	#include <vitaGL.h>
 	#define RMX_USE_GLES2
 
+#elif defined(PLATFORM_3DS)
+	#include <GLES/gl2.h>
+	#define RMX_USE_GLES2
+	
 #else
 	#error Unsupported platform
 #endif
@@ -92,7 +96,7 @@
 
 #if defined(RMX_USE_GLES2) && !defined(__EMSCRIPTEN__)
 	#if !defined(PLATFORM_LINUX)
-		#if !defined(__vita__)
+		#if !defined(__3DS__)
 			#define GL_RGB8				 GL_RGB
 			#define GL_RGBA8			 GL_RGBA
 			#define glGenVertexArrays	 glGenVertexArraysOES

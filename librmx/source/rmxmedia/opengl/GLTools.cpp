@@ -77,13 +77,13 @@
 	{
 		switch (err)
 		{
-			case GL_NONE:							return "NONE";
 			case GL_INVALID_OPERATION:				return "INVALID_OPERATION";
 			case GL_INVALID_ENUM:					return "INVALID_ENUM";
 			case GL_INVALID_VALUE:					return "INVALID_VALUE";
 			case GL_OUT_OF_MEMORY:					return "OUT_OF_MEMORY";
-			#if !defined(PLATFORM_VITA)
 			case GL_INVALID_FRAMEBUFFER_OPERATION:	return "INVALID_FRAMEBUFFER_OPERATION";
+			#if !defined(PLATFORM_3DS)
+			case GL_NONE:							return "NONE";
 			#endif
 		}
 		return rmx::hexString((int)err, 4);

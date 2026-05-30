@@ -228,7 +228,7 @@ namespace rmx
 		int sourceSamplePositionFraction = 0;
 		while (numOutputSamplesNeeded > 0)
 		{
-			#if !defined(PLATFORM_VITA)
+			#if !defined(PLATFORM_3DS)
 			RMX_ASSERT(audioInstance.mPosition <= audioBuffer.getLength(), "Audio instance position " << audioInstance.mPosition << " exceeding audio buffer length " << audioBuffer.getLength());
 			#endif
 			short* instanceData[2];

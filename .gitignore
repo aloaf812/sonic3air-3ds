@@ -42,6 +42,11 @@ bin/
 *.tlog
 .vs
 
+# 3DS
+*.3dsx
+*.elf
+*.cia
+
 # SDL2 Visual Studio generated files
 /framework/external/sdl/SDL2/VisualC/x64
 /framework/external/sdl/SDL2/VisualC/Win32

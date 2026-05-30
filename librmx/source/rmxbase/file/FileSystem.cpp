@@ -8,7 +8,7 @@
 
 #include "rmxbase.h"
 
-#if defined(PLATFORM_VITA)
+#if defined(PLATFORM_3DS)
 	#include <locale>
 	#include <codecvt>
 
@@ -27,10 +27,10 @@ namespace rmx
 	FileSystem::FileSystem()
 	{
 		// By default, add a real file provider with mounted at root
-		#if !defined(PLATFORM_VITA)
+		#if !defined(PLATFORM_3DS)
 			addMountPoint(mDefaultRealFileProvider, L"", L"", 0);
 		#else
-			addMountPoint(mDefaultRealFileProvider, L"ux0:data/sonic3air/", L"ux0:data/sonic3air/", 0);
+			addMountPoint(mDefaultRealFileProvider, L"sdmc:/3ds/sonic3air/", L"sdmc:/3ds/sonic3air/", 0);
 		#endif
 	}
 
@@ -366,10 +366,10 @@ namespace rmx
 	{
 		// Check if path starts with the mount point
 		if (!mountPoint.mMountPoint.empty() && !startsWith(inPath, mountPoint.mMountPoint)) {
-			#if !defined(PLATFORM_VITA)
+			#if !defined(PLATFORM_3DS)
 				return nullptr;
 			#else
-				if (wstr_to_str(mountPoint.mMountPoint) == "ux0:data/sonic3air/") {
+				if (wstr_to_str(mountPoint.mMountPoint) == "sdmc:/3ds/sonic3air/") {
 					tempPath = mountPoint.mMountPoint;
 					tempPath.append(inPath);
 					return &tempPath;

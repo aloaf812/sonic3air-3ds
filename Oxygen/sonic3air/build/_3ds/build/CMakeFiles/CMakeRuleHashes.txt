@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+2528fb8fd21cd6211abae2e5fa16b592 CMakeFiles/sonic3air_3dsx
+e930388d1cc3543a9963a1ca41464b2d sonic3air.3dsx
+b9fead9860469a3879459533ad5fa6d5 sonic3air_3dsx.default.smdh

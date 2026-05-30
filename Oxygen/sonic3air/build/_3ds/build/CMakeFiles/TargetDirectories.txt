@@ -1,0 +1,5 @@
+/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/build/CMakeFiles/minizip.dir
+/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/build/CMakeFiles/sonic3air.dir
+/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/build/CMakeFiles/sonic3air_3dsx.dir
+/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/build/CMakeFiles/edit_cache.dir
+/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/build/CMakeFiles/rebuild_cache.dir

@@ -11,7 +11,7 @@
 #include "oxygen/application/Configuration.h"
 #include "oxygen/helper/FileHelper.h"
 
-#if defined(PLATFORM_VITA) // For the emergency unloads
+#if defined(PLATFORM_3DS) // For the emergency unloads
 #include "oxygen/application/audio/AudioOutBase.h"
 #include "oxygen/application/audio/AudioPlayer.h"
 #include "oxygen/application/EngineMain.h"
@@ -104,7 +104,7 @@ bool OggAudioSource::checkForUnload(float timestamp)
 	bool mayUnload = false;
 
 	// PSVITA has limited RAM, so...
-	#if defined(PLATFORM_VITA)
+	#if defined(PLATFORM_3DS)
 	if (((float)EngineMain::instance().getAudioOut().getAudioPlayer().getMemoryUsage() / 1048576.0f) >= 80.0f) // 80 MB
 	{
 		// Let's make an emergency forced unload since the buffer is getting too big
@@ -132,7 +132,7 @@ bool OggAudioSource::checkForUnload(float timestamp)
 		if (mAudioBuffer.getLengthInSec() > 5.0f)
 		{
 			// Unload after 3 minutes
-			#if !defined(PLATFORM_VITA)
+			#if !defined(PLATFORM_3DS)
 				mayUnload = (timestamp - mLastUsedTimestamp > 180.0f);
 			#else
 				// PSVITA has limited RAM, so...

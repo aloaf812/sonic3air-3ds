@@ -177,13 +177,13 @@ namespace rmx
 
 	void ErrorHandling::printToLog(ErrorSeverity errorSeverity, const std::string& message)
 	{
-		#if !defined(PLATFORM_VITA)
+		#if !defined(PLATFORM_3DS)
 			if (nullptr != mLogger)
 			{
 				mLogger->logMessage(errorSeverity, message);
 			}
 		#else
-			sceClibPrintf("[ERROR] %s\n", message.c_str());
+			printf("[ERROR] %s\n", message.c_str());
 		#endif
 	}
 

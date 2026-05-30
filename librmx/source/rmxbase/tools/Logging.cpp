@@ -66,7 +66,7 @@ namespace rmx
 
 	void StdCoutLogger::log(LogLevel logLevel, const std::string& string)
 	{
-	#if !defined(PLATFORM_VITA)		
+	#if !defined(PLATFORM_3DS)		
 		// Write to std::cout
 		if (mAddTimestamp)
 		{
@@ -89,6 +89,10 @@ namespace rmx
 	#elif defined(PLATFORM_VITA)
 		{
 			sceClibPrintf("[rmx] %s\n", string.c_str());
+		}
+	#elif defined(PLATFORM_3DS)
+		{
+			printf("[rmx] %s\n", string.c_str());
 		}
 	#endif
 	}
