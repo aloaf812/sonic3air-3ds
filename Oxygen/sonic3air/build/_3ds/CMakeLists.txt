@@ -31,9 +31,6 @@ file(GLOB MINIZIP_SOURCES ${WORKSPACE_DIR}/framework/external/zlib/zlib/contrib/
 add_library(minizip ${MINIZIP_SOURCES})
 
 link_directories("/c/devKitPro/portlibs/3ds/lib")
-link_directories("/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/GLASS/BuildHOS/_deps/kygx-build")
-link_directories("/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/GLASS/BuildHOS/_deps/kazmath_3ds-build")
-link_directories("/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/GLASS/BuildHOS/_deps/rip-build")
 link_directories("/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/src")
 
 add_executable(${CMAKE_PROJECT_NAME}
@@ -323,15 +320,11 @@ target_include_directories(${CMAKE_PROJECT_NAME}
                            PUBLIC ${DEVKITPRO}/portlibs/3ds/include/SDL2
                            PUBLIC $ENV{DEVKITPRO}/portlibs/3ds/include
                            PUBLIC ${CMAKE_SOURCE_DIR}/extern/NovaGL/include
-                           PUBLIC ${CMAKE_SOURCE_DIR}/extern/GLASS/Include
-                           PUBLIC ${CMAKE_SOURCE_DIR}/extern/KYGX/include
-                           PUBLIC ${CMAKE_SOURCE_DIR}/extern/RIP/Include
                            PUBLIC ${CMAKE_SOURCE_DIR}/build/zlib
                            PUBLIC ${WORKSPACE_DIR}/framework/external/zlib/zlib/contrib/minizip
                            )
 
-target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE "/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/GLASS/BuildHOS/Source/libGLASSv2.a" 
-                                    kygx "/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/GLASS/BuildHOS/_deps/libctru-build/libctru/libctru.a" kazmath rip vorbisidec ogg theora theoradec 
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE "/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/GLASS/BuildHOS/_deps/libctru-build/libctru/libctru.a" NovaGL vorbisidec ogg 
                                     "/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/build/zlib/libzlib.a" 
                                     minizip SDL2main SDL2::SDL2 citro3d )
 

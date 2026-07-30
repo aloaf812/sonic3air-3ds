@@ -730,51 +730,21 @@ bool EngineMain::createWindow()
 		SDL_GetWindowSize(mSDLWindow, &videoConfig.mWindowRect.width, &videoConfig.mWindowRect.height);
 		SDL_ShowCursor(!videoConfig.mHideCursor);
 
-		// 4. Handle OpenGL / GLASS Context Creation
 		if (useOpenGL)
 		{
-		    #if defined(PLATFORM_3DS)
-		        RMX_LOG_INFO("Creating 3DS OpenGL context...");
-		        gfxInitDefault();
-    			C3D_Init(C3D_DEFAULT_CMDBUF_SIZE);
-				kygxInit(); 
-		        
-				// Create context.
-    			GLASSCtx ctx = glassCreateDefaultContext(GLASS_VERSION_ES_2);
-    			glassBindContext(ctx);
-
-    			glViewport(0, 0, 400, 240);
-				
-    			GLuint vbos[2];
-    			glGenBuffers(2, vbos);
-		
-		        if (ctx)
-		        {
-		            RMX_LOG_INFO("Vsync setup...");
-		            setVSyncMode(config.mFrameSync);
-		        }
-		        else
-		        {
-		            RMX_LOG_INFO("Failed to create OpenGL context, fallback to pure software renderer");
-		            config.mRenderMethod = Configuration::RenderMethod::SOFTWARE;
-		            C3D_Fini();
-		            gfxExit();
-		        }
-		    #else
-		        RMX_LOG_INFO("Creating OpenGL context...");
-		        SDL_GLContext context = SDL_GL_CreateContext(mSDLWindow);
-		        if (nullptr != context)
-		        {
-		            RMX_LOG_INFO("Vsync setup...");
-		            setVSyncMode(config.mFrameSync);
-		        }
-		        else
-		        {
-		            RMX_LOG_INFO("Failed to create OpenGL context, fallback to pure software renderer");
-		            config.mRenderMethod = Configuration::RenderMethod::SOFTWARE;
-					// TODO: In this case, the SDL window was created with SDL_WINDOW_OPENGL flag, but that does not seem to be a problem
-		        }
-		    #endif
+			RMX_LOG_INFO("Creating OpenGL context...");
+			SDL_GLContext context = SDL_GL_CreateContext(mSDLWindow);
+			if (nullptr != context)
+			{
+				RMX_LOG_INFO("Vsync setup...");
+				setVSyncMode(config.mFrameSync);
+			}
+			else
+			{
+				RMX_LOG_INFO("Failed to create OpenGL context, fallback to pure software renderer");
+				config.mRenderMethod = Configuration::RenderMethod::SOFTWARE;
+				// TODO: In this case, the SDL window was created with SDL_WINDOW_OPENGL flag, but that does not seem to be a problem
+			}
 		}
 	}
 

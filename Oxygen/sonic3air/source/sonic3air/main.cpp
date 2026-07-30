@@ -13,6 +13,11 @@
 
 #include "oxygen/platform/PlatformFunctions.h"
 
+#if defined(PLATFORM_3DS)
+#include <3ds.h>
+#include <NovaGL.h>
+#endif
+
 // HJW: I know it's sloppy to put this here... it'll get moved afterwards
 // Building with my env (msys2,gcc) requires this stub for some reason
 #ifndef pathconf
@@ -35,7 +40,7 @@ extern "C"
 extern "C"
 {
 	// Any value highter than 324 MB will make the game either boot without sound or just crash the PSVITA due to lack of physical RAM
-	int _newlib_heap_size_user = 324 * 1024 * 1024;
+	int _newlib_heap_size_user = 128 * 1024 * 1024;
 	unsigned int sceUserMainThreadStackSize = 4 * 1024 * 1024;	
 }
 #endif
@@ -59,6 +64,10 @@ int main(int argc, char** argv)
 	// Make sure we're in the correct working directory
 	PlatformFunctions::changeWorkingDirectory(arguments.mExecutableCallPath);
 #else
+	gfxInitDefault();
+	nova_init();
+
+	argc = 0;
 
 	PlatformFunctions::changeWorkingDirectory(L"sdmc:/3ds/sonic3air");
 	ArgumentsReader arguments;

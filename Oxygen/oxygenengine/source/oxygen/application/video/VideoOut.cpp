@@ -202,6 +202,7 @@ bool VideoOut::updateGameScreen()
 	const bool hasNewSimulationFrame = (mFrameState == FrameState::FRAME_READY);
 	if (!hasNewSimulationFrame && !mFrameInterpolation.mCurrentlyInterpolating && !mDebugDrawRenderingRequested && !mRequireGameScreenUpdate)
 	{
+		// RMX_LOG_INFO("GL ERROR: " << glGetError() << "\n");
 		// No update
 		return false;
 	}

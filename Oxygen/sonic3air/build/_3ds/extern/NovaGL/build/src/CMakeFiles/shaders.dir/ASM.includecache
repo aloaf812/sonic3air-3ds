@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/src/.dkp-generated/shaders/NovaGL_shader_basic_shbin.S
+
+/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/src/.dkp-generated/shaders/NovaGL_shader_clipspace_shbin.S
+
+/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/src/.dkp-generated/shaders/NovaGL_shader_lighting_shbin.S
+
+/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/src/.dkp-generated/shaders/NovaGL_shader_shbin.S
+
+/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/src/.dkp-generated/shaders/NovaGL_shader_texmtx_shbin.S
+

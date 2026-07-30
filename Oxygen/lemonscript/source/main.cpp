@@ -306,8 +306,6 @@ struct RuntimeExecuteConnector : public lemon::Runtime::ExecuteConnector
 
 int main(int argc, char** argv)
 {
-	consoleInit(GFX_BOTTOM, NULL);
-
 	INIT_RMX;
 
 	// Move up until we're out of bin directory

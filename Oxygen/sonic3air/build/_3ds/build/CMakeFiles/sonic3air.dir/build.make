@@ -4463,7 +4463,6 @@ sonic3air.elf: CMakeFiles/sonic3air.dir/c/Users/aloaf/Documents/GitHub/sonic3air
 sonic3air.elf: CMakeFiles/sonic3air.dir/c/Users/aloaf/Documents/GitHub/sonic3air/librmx/source/rmxmedia/threads/JobManager.o
 sonic3air.elf: CMakeFiles/sonic3air.dir/c/Users/aloaf/Documents/GitHub/sonic3air/librmx/source/rmxmedia/threads/Thread.o
 sonic3air.elf: CMakeFiles/sonic3air.dir/build.make
-sonic3air.elf: /c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/GLASS/BuildHOS/Source/libGLASSv2.a
 sonic3air.elf: /c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/GLASS/BuildHOS/_deps/libctru-build/libctru/libctru.a
 sonic3air.elf: zlib/libzlib.a
 sonic3air.elf: libminizip.a

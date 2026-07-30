@@ -232,7 +232,7 @@ namespace softwaredrawer
 			int k = 0;
 			if constexpr (sizeof(void*) == 8)
 			{
-				#if !defined(PLATFORM_VITA)
+				#if !defined(PLATFORM_3DS)
 				// On 64-bit architectures: Process 2 pixels at once
 				for (; k < numPixels; k += 2)
 				{
@@ -461,10 +461,12 @@ void SoftwareDrawer::performRendering(const DrawCollection& drawCollection)
 			case DrawCommand::Type::SET_WINDOW_RENDER_TARGET:
 			{
 				//SetWindowRenderTargetDrawCommand& dc = drawCommand->as<SetWindowRenderTargetDrawCommand>();
-				if (nullptr != mInternal.getCurrentRenderTarget())
-				{
-					mInternal.getCurrentRenderTarget()->bitmapUpdated();
-					mInternal.setCurrentRenderTarget(nullptr);
+				if (&mInternal != nullptr) {
+					if (nullptr != mInternal.getCurrentRenderTarget())
+					{
+						mInternal.getCurrentRenderTarget()->bitmapUpdated();
+						mInternal.setCurrentRenderTarget(nullptr);
+					}
 				}
 				break;
 			}

@@ -75,7 +75,7 @@ void OptionsConfig::buildSystem()
 
 	CATEGORY("Update")
 	{
-		#if !defined(PLATFORM_VITA)
+		#if !defined(PLATFORM_3DS)
 		configBuilder.addSetting("Check for updates", option::_CHECK_FOR_UPDATE)
 			.addOption("Stable updates", 0)
 			.addOption("Stable & preview", 1)
@@ -85,7 +85,7 @@ void OptionsConfig::buildSystem()
 
 	CATEGORY("Ghost Sync")
 	{
-		#if !defined(PLATFORM_VITA)
+		#if !defined(PLATFORM_3DS)
 		configBuilder.addSetting("Enable Ghost Sync", option::GHOST_SYNC)
 			.addOption("Disabled", 0)
 			.addOption("Enabled", 1);
@@ -127,7 +127,7 @@ void OptionsConfig::buildDisplay()
 		configBuilder.addSetting("Renderer:", option::RENDERER);
 		const Configuration::RenderMethod highest = Configuration::getHighestSupportedRenderMethod();
 
-		#if !defined(PLATFORM_VITA)
+		#if !defined(PLATFORM_3DS)
 		configBuilder.addOption("Fail-Safe / Software", (uint32)Configuration::RenderMethod::SOFTWARE);
 		if (highest >= Configuration::RenderMethod::OPENGL_SOFT)
 			configBuilder.addOption("OpenGL Software", (uint32)Configuration::RenderMethod::OPENGL_SOFT);
@@ -156,7 +156,7 @@ void OptionsConfig::buildDisplay()
 			.addOption("Classic Box 2", 2)
 			.addOption("Classic Box 3", 3);
 			
-		#if !defined(PLATFORM_VITA)
+		#if !defined(PLATFORM_3DS)
 		configBuilder.addSetting("Screen Filter:", option::FILTERING)
 			.addOption("Sharp", 0)
 			.addOption("Soft 1", 1)
@@ -190,7 +190,7 @@ void OptionsConfig::buildDisplay()
 
 	CATEGORY("Window Mode")
 	{
-		#if !defined(PLATFORM_VITA)
+		#if !defined(PLATFORM_3DS)
 		configBuilder.addSetting("Current Screen:", option::WINDOW_MODE)
 			.addOption("Windowed", 0)
 			.addOption("Fullscreen", 1)

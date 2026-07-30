@@ -1,0 +1,56 @@
+; =============================================================================
+; NovaGL "basic" vertex shader — fast path for fog-off + identity tex matrix.
+;
+; Wins vs NovaGL_shader.pica:
+;   - Single dp4 chain (MVP precomputed on CPU) instead of two (mv then proj):
+;       saves 4 dp4 / vertex.
+;   - No fog distance / blend math: saves ~10 ALU ops / vertex.
+;   - No tex-matrix transform: saves 2 dp4 / vertex.
+;
+; CPU contract: g.mvp_combined is built from tilt * projection_adjusted *
+; modelview when either projection or modelview is dirty (utils.c).
+;
+; Attribute-loader contract (nova_setup_attr_info): position is loaded as
+; 3 floats (PICA pads w = 1.0), texcoord as 2 floats (PICA pads to
+; (s, t, 0, 1)) — so both can be used directly without temp rebuilds.
+; =============================================================================
+
+.fvec mvp[4]
+
+.alias inPosition  v0
+.alias inTexcoord  v1
+.alias inColor     v2
+
+.out outPosition   position
+.out outColor      color
+.out outTexcoord0  texcoord0
+
+.constf CONST1 (1.0, 0.0, 0.0, 0.0)
+.constf my_normalize (0.00392156, 0.00392156, 0.00392156, 0.00392156)
+
+.proc main
+    ; Single combined MVP transform (into scratch r14 first so we can
+    ; depth-clamp z before output — same trick as the full shader, see
+    ; NovaGL_shader.pica for the rationale). Loader pads inPosition.w = 1.
+    dp4 r14.x, mvp[0], inPosition
+    dp4 r14.y, mvp[1], inPosition
+    dp4 r14.z, mvp[2], inPosition
+    dp4 r14.w, mvp[3], inPosition
+
+    ; GL_DEPTH_CLAMP emulation — PICA valid clip-z range is [-w, 0]
+    ; (NOT GL's [-w, w]); see NovaGL_shader.pica for full rationale.
+    ; PICA200 only allows constants as src1 — swap operands (min is commutative).
+    min r14.z, CONST1.y, r14.z
+    max r14.z, r14.z, -r14.w
+
+    mov outPosition, r14
+
+    ; Color: byte -> float
+    mul outColor, my_normalize, inColor
+
+    ; UV passthrough (tex matrix assumed identity). Loader pads inTexcoord
+    ; to (s, t, 0, 1) — exactly the (z=0, w=1) the old 3-mov version built.
+    mov outTexcoord0, inTexcoord
+
+    end
+.end

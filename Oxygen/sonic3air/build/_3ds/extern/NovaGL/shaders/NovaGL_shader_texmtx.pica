@@ -1,0 +1,56 @@
+; =============================================================================
+; NovaGL "texmtx" vertex shader — fog OFF, tex matrix ON.
+;
+; Same MVP-combined trick as basic (single dp4 chain), but applies the
+; GL_TEXTURE matrix to UV. Useful for GameCube/Wii ports that ship texel-
+; space UVs and rely on a tex matrix to bring them into [0,1].
+;
+; Wins vs full: -4 dp4 (single MVP chain), no fog math.
+;
+; Attribute-loader contract: position loaded as 3 floats (PICA pads w = 1.0),
+; texcoord as 2 floats (PICA pads to (s, t, 0, 1)).
+; =============================================================================
+
+.fvec mvp[4]
+.fvec texmtx[4]
+
+.alias inPosition  v0
+.alias inTexcoord  v1
+.alias inColor     v2
+
+.out outPosition   position
+.out outColor      color
+.out outTexcoord0  texcoord0
+
+.constf CONST1 (1.0, 0.0, 0.0, 0.0)
+.constf my_normalize (0.00392156, 0.00392156, 0.00392156, 0.00392156)
+
+.proc main
+    ; Single combined MVP transform (into scratch r14 so we can depth-clamp
+    ; before output — same trick as the full shader). Loader pads w = 1.
+    dp4 r14.x, mvp[0], inPosition
+    dp4 r14.y, mvp[1], inPosition
+    dp4 r14.z, mvp[2], inPosition
+    dp4 r14.w, mvp[3], inPosition
+
+    ; GL_DEPTH_CLAMP emulation — PICA valid clip-z range is [-w, 0]
+    ; (NOT GL's [-w, w]); see NovaGL_shader.pica for full rationale.
+    ; PICA200 only allows constants as src1 — swap operands (min is commutative).
+    min r14.z, CONST1.y, r14.z
+    max r14.z, r14.z, -r14.w
+
+    mov outPosition, r14
+
+    ; Color byte -> float
+    mul outColor, my_normalize, inColor
+
+    ; Apply GL_TEXTURE matrix to (s, t, 0, 1) — loader pads inTexcoord to
+    ; exactly that, no temp rebuild needed. Via scratch r11: see the full
+    ; shader for why dp4 must not write output .x/.y directly.
+    dp4 r11.x, texmtx[0], inTexcoord
+    dp4 r11.y, texmtx[1], inTexcoord
+    mov outTexcoord0.xy, r11.xy
+    mov outTexcoord0.zw, CONST1.yyyx  ; z = 0, w = 1
+
+    end
+.end

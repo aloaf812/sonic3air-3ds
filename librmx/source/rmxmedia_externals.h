@@ -86,7 +86,7 @@
 	#define RMX_USE_GLES2
 
 #elif defined(PLATFORM_3DS)
-	#include <GLES/gl2.h>
+	#include <NovaGL.h>
 	#define RMX_USE_GLES2
 	
 #else

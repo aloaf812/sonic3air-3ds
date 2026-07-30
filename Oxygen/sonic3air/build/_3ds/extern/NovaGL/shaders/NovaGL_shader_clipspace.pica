@@ -1,0 +1,72 @@
+; =============================================================================
+; NovaGL "clipspace" vertex shader — apply caller-supplied post-clip transform.
+;
+; The caller has already produced clip-space (x, y, z, w) and provides them
+; through the position attribute as a full 4-component vector. The shader
+; multiplies it by `projection` (uploaded by apply_gpu_state, computed as
+; tilt * Z-range-fixup * caller_projection_stack_top) and emits the result.
+;
+; For our gfx_novagl.cpp use case the caller_projection is identity, so
+; `projection` reduces to (tilt * Zfix-identity), giving us:
+;   - portrait→landscape screen rotation
+;   - OpenGL Z-range [-w, w] → PICA200 Z-range [-w, 0] remap
+; both applied to ALREADY-projected vertices without disturbing the perspective
+; divide (w is preserved through dp4, then PICA divides x/y/z by w).
+;
+; This is what makes 3D rendering work on top of fast3d: fast3d emits true
+; clip-space (post MVP, pre-divide) including a meaningful w; NovaGL must
+; not force w=1 (as the full / basic / texmtx shaders all do) or the
+; perspective divide collapses to a no-op and 3D geometry degenerates.
+; =============================================================================
+
+.fvec projection[4]
+
+.alias inPosition  v0
+.alias inTexcoord  v1
+.alias inColor     v2
+
+.out outPosition   position
+.out outColor      color
+.out outTexcoord0  texcoord0
+.out outTexcoord1  texcoord1
+
+.constf CONST1 (1.0, 0.0, 0.0, 0.0)
+.constf my_normalize (0.00392156, 0.00392156, 0.00392156, 0.00392156)
+
+.proc main
+    ; Position: dp4 against the post-clip transform. inPosition is fed as
+    ; 4 floats by the attribute loader (configured to match va_vertex.size
+    ; in nova_draw_internal). If the caller bound only 3 floats the PICA
+    ; loader fills w with 1.0, so 2D-only callers still work.
+    dp4 r14.x, projection[0], inPosition
+    dp4 r14.y, projection[1], inPosition
+    dp4 r14.z, projection[2], inPosition
+    dp4 r14.w, projection[3], inPosition
+
+    ; GL_DEPTH_CLAMP emulation — clamp z into PICA's valid clip range
+    ; [-w, 0] (NOT GL's [-w, w]) so the hardware clip doesn't drop
+    ; triangles that slip past the N64-side near plane. Critical for
+    ; fast3d: it does CPU-side projection with its own clip range, then
+    ; hands us clip-space xyzw directly; vertices on the far side of the
+    ; near plane (player gun, dropped weapons, low-altitude geometry under
+    ; the camera) get hard-rejected by PICA without this.
+    ; PICA200 only allows constants as src1 — swap operands (min is commutative).
+    min r14.z, CONST1.y, r14.z
+    max r14.z, r14.z, -r14.w
+
+    mov outPosition, r14
+
+    ; Color byte -> float
+    mul outColor, my_normalize, inColor
+
+    ; UV passthrough — texcoord loader is 2 floats, PICA pads to (s, t, 0, 1).
+    mov outTexcoord0, inTexcoord
+    ; PICA texture unit 1 samples with TEXCOORD1, which is a separate
+    ; interpolant — without writing it, any TEV stage referencing
+    ; GPU_TEXTURE1 (fast3d TRILERP mip blends) samples with garbage
+    ; coordinates. Mirror unit 0's UV; N64 mip levels share normalized
+    ; coordinates, so this matches what the RDP did.
+    mov outTexcoord1, inTexcoord
+
+    end
+.end

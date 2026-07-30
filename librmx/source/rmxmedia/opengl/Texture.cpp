@@ -60,12 +60,12 @@ bool Texture::checkHandle() const
 
 GLenum Texture::getDefaultDataFormat(GLenum internalFormat)
 {
-	if (internalFormat == GL_DEPTH_COMPONENT16)
+	/*if (internalFormat == GL_DEPTH_COMPONENT16)
 		return GL_DEPTH_COMPONENT16;
 #ifdef ALLOW_LEGACY_OPENGL
 	if (internalFormat >= GL_DEPTH_COMPONENT16 && internalFormat <= GL_DEPTH_COMPONENT32)
 		return GL_DEPTH_COMPONENT;
-#endif
+#endif*/
 	return GL_RGBA;
 }
 

@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/cmake_install.cmake",
+		"/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/src/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
