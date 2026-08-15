@@ -64,9 +64,6 @@ int main(int argc, char** argv)
 	// Make sure we're in the correct working directory
 	PlatformFunctions::changeWorkingDirectory(arguments.mExecutableCallPath);
 #else
-	gfxInitDefault();
-	nova_init();
-
 	argc = 0;
 
 	PlatformFunctions::changeWorkingDirectory(L"sdmc:/3ds/sonic3air");

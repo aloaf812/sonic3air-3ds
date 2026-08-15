@@ -713,23 +713,16 @@ bool EngineMain::createWindow()
 			}
 		}
 
-		// this is to make it not crash while creating the SDL window
-		#ifdef __3DS__
-    	flags &= ~SDL_WINDOW_OPENGL; 
-		#endif
-
 		RMX_LOG_INFO("Creating window...");
 		mSDLWindow = SDL_CreateWindow(*videoConfig.mCaption, SDL_WINDOWPOS_CENTERED_DISPLAY(displayIndex), SDL_WINDOWPOS_CENTERED_DISPLAY(displayIndex), videoConfig.mWindowRect.width, videoConfig.mWindowRect.height, flags);
 		if (nullptr == mSDLWindow)
 		{
-			RMX_LOG_INFO(SDL_GetError());
 			return false;
 		}
 
 		RMX_LOG_INFO("Retrieving actual window size...");
 		SDL_GetWindowSize(mSDLWindow, &videoConfig.mWindowRect.width, &videoConfig.mWindowRect.height);
 		SDL_ShowCursor(!videoConfig.mHideCursor);
-
 		if (useOpenGL)
 		{
 			RMX_LOG_INFO("Creating OpenGL context...");
@@ -746,6 +739,8 @@ bool EngineMain::createWindow()
 				// TODO: In this case, the SDL window was created with SDL_WINDOW_OPENGL flag, but that does not seem to be a problem
 			}
 		}
+
+		consoleInit(GFX_BOTTOM, NULL);
 	}
 
 	// Create drawer depending on render method

@@ -461,12 +461,10 @@ void SoftwareDrawer::performRendering(const DrawCollection& drawCollection)
 			case DrawCommand::Type::SET_WINDOW_RENDER_TARGET:
 			{
 				//SetWindowRenderTargetDrawCommand& dc = drawCommand->as<SetWindowRenderTargetDrawCommand>();
-				if (&mInternal != nullptr) {
-					if (nullptr != mInternal.getCurrentRenderTarget())
-					{
-						mInternal.getCurrentRenderTarget()->bitmapUpdated();
-						mInternal.setCurrentRenderTarget(nullptr);
-					}
+				if (nullptr != mInternal.getCurrentRenderTarget())
+				{
+					mInternal.getCurrentRenderTarget()->bitmapUpdated();
+					mInternal.setCurrentRenderTarget(nullptr);
 				}
 				break;
 			}

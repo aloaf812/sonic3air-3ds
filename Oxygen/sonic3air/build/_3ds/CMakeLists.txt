@@ -324,8 +324,8 @@ target_include_directories(${CMAKE_PROJECT_NAME}
                            PUBLIC ${WORKSPACE_DIR}/framework/external/zlib/zlib/contrib/minizip
                            )
 
-target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE "/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/GLASS/BuildHOS/_deps/libctru-build/libctru/libctru.a" NovaGL vorbisidec ogg 
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE vorbisidec ogg 
                                     "/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/build/zlib/libzlib.a" 
-                                    minizip SDL2main SDL2::SDL2 citro3d )
+                                    minizip SDL2main SDL2::SDL2 NovaGL citro3d )
 
 ctr_create_3dsx(${CMAKE_PROJECT_NAME})
