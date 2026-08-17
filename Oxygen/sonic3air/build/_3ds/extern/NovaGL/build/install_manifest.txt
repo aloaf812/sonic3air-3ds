@@ -1,0 +1,9 @@
+/opt/devkitpro/portlibs/3ds/lib/libNovaGL.a
+/opt/devkitpro/portlibs/3ds/include/NovaGL.h
+/opt/devkitpro/portlibs/3ds/include/nova_glfw.h
+/opt/devkitpro/portlibs/3ds/include/GLFW/glfw3.h
+/opt/devkitpro/portlibs/3ds/include/glad/gl.h
+/opt/devkitpro/portlibs/3ds/include/glad/glad.h
+/opt/devkitpro/portlibs/3ds/include/GL/gl.h
+/opt/devkitpro/portlibs/3ds/include/GLES/gl.h
+/opt/devkitpro/portlibs/3ds/include/GLES2/gl2.h

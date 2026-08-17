@@ -3,13 +3,13 @@
 
 # compile ASM with /opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc.exe
 # compile C with /opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc.exe
-ASM_DEFINES = -DNOVA_VBO_STREAM
+ASM_DEFINES = -DNOVAGL_NO_SPLASHSCREEN=1 -DNOVA_VBO_STREAM
 
 ASM_INCLUDES = -I/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/src/../include -I/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/src/generated -I/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/src/../.dkp-generated/shaders -I/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/src/.dkp-generated/shaders -isystem /opt/devkitpro/libctru/include
 
 ASM_FLAGS = -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft -mword-relocations -ffunction-sections -D__3DS__ -x assembler-with-cpp -g -O2 -DNDEBUG -O3 -ffast-math -fno-math-errno
 
-C_DEFINES = -DNOVA_VBO_STREAM
+C_DEFINES = -DNOVAGL_NO_SPLASHSCREEN=1 -DNOVA_VBO_STREAM
 
 C_INCLUDES = -I/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/src/../include -I/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/src/generated -I/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/src/../.dkp-generated/shaders -I/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/src/.dkp-generated/shaders -isystem /opt/devkitpro/libctru/include
 

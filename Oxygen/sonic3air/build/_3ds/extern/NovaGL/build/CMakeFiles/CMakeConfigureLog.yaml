@@ -3735,8 +3735,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/CMakeFiles/CMakeScratch/TryCompile-gSZvUl"
-      binary: "/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/CMakeFiles/CMakeScratch/TryCompile-gSZvUl"
+      source: "/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/CMakeFiles/CMakeScratch/TryCompile-BT3xTN"
+      binary: "/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/CMakeFiles/CMakeScratch/TryCompile-BT3xTN"
     cmakeVariables:
       CMAKE_C_FLAGS: "-march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft -mword-relocations -ffunction-sections -D__3DS__"
       CMAKE_C_FLAGS_DEBUG: "-g -Og -DDEBUG"
@@ -3747,13 +3747,13 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/CMakeFiles/CMakeScratch/TryCompile-gSZvUl'
+        Change Dir: '/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/CMakeFiles/CMakeScratch/TryCompile-BT3xTN'
         
-        Run Build Command(s): /usr/bin/cmake.exe -E env VERBOSE=1 /usr/bin/make.exe -f Makefile cmTC_440bb/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_440bb.dir/build.make CMakeFiles/cmTC_440bb.dir/build
-        make[1]: Entering directory '/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/CMakeFiles/CMakeScratch/TryCompile-gSZvUl'
-        Building C object CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.o
-        /opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc.exe  -isystem /opt/devkitpro/libctru/include -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft -mword-relocations -ffunction-sections -D__3DS__  -g -O2 -DNDEBUG   -v -o CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/cmake.exe -E env VERBOSE=1 /usr/bin/make.exe -f Makefile cmTC_7231a/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_7231a.dir/build.make CMakeFiles/cmTC_7231a.dir/build
+        make[1]: Entering directory '/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/CMakeFiles/CMakeScratch/TryCompile-BT3xTN'
+        Building C object CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.o
+        /opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc.exe  -isystem /opt/devkitpro/libctru/include -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft -mword-relocations -ffunction-sections -D__3DS__  -g -O2 -DNDEBUG   -v -o CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=C:\\msys64\\opt\\devkitpro\\devkitARM\\bin\\arm-none-eabi-gcc.exe
         Target: arm-none-eabi
@@ -3761,8 +3761,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.2.0 (devkitARM) 
-        COLLECT_GCC_OPTIONS='-isystem' 'C:/msys64/opt/devkitpro/libctru/include'  '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.o' '-c' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'CMakeFiles/cmTC_440bb.dir/'
-         C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/cc1.exe -quiet -v -imultilib armv6k/fpu -iprefix C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/ -isysroot C:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi -D__USES_INITFINI__ -D __3DS__ -D NDEBUG -isystem C:/msys64/opt/devkitpro/libctru/include C:/msys64/usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_440bb.dir/ -dumpbase CMakeCCompilerABI.c -dumpbase-ext .c -mtune=mpcore -mfloat-abi=hard -mtp=soft -mword-relocations -marm -mlibarch=armv6k -march=armv6k -g -O2 -version -ffunction-sections -o C:\\msys64\\tmp\\ccfLAP3G.s
+        COLLECT_GCC_OPTIONS='-isystem' 'C:/msys64/opt/devkitpro/libctru/include'  '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.o' '-c' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'CMakeFiles/cmTC_7231a.dir/'
+         C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/cc1.exe -quiet -v -imultilib armv6k/fpu -iprefix C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/ -isysroot C:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi -D__USES_INITFINI__ -D __3DS__ -D NDEBUG -isystem C:/msys64/opt/devkitpro/libctru/include C:/msys64/usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_7231a.dir/ -dumpbase CMakeCCompilerABI.c -dumpbase-ext .c -mtune=mpcore -mfloat-abi=hard -mtp=soft -mword-relocations -marm -mlibarch=armv6k -march=armv6k -g -O2 -version -ffunction-sections -o C:\\msys64\\tmp\\cc1WpWYL.s
         GNU C23 (devkitARM) version 15.2.0 (arm-none-eabi)
         	compiled by GNU C version 13.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.18-GMP
         
@@ -3780,13 +3780,13 @@ events:
          C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/include
         End of search list.
         Compiler executable checksum: 60dee095c975adca225ee59460a542fa
-        COLLECT_GCC_OPTIONS='-isystem' 'C:/msys64/opt/devkitpro/libctru/include'  '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.o' '-c' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'CMakeFiles/cmTC_440bb.dir/'
-         C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/bin/as.exe -march=armv6k -mfloat-abi=hard -meabi=5 -o CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.o C:\\msys64\\tmp\\ccfLAP3G.s
+        COLLECT_GCC_OPTIONS='-isystem' 'C:/msys64/opt/devkitpro/libctru/include'  '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.o' '-c' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'CMakeFiles/cmTC_7231a.dir/'
+         C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/bin/as.exe -march=armv6k -mfloat-abi=hard -meabi=5 -o CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.o C:\\msys64\\tmp\\cc1WpWYL.s
         COMPILER_PATH=C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/;C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/;C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/bin/
         LIBRARY_PATH=C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/;C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/armv6k/fpu/;C:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi/lib/armv6k/fpu/;C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/;C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/;C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/;C:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi/lib/
-        COLLECT_GCC_OPTIONS='-isystem' 'C:/msys64/opt/devkitpro/libctru/include'  '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.o' '-c' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.'
-        Linking C executable cmTC_440bb.elf
-        /usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_440bb.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-isystem' 'C:/msys64/opt/devkitpro/libctru/include'  '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.o' '-c' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.'
+        Linking C executable cmTC_7231a.elf
+        /usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_7231a.dir/link.txt --verbose=1
         Using built-in specs.
         Reading specs from C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/3dsx.specs
         Reading specs from C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/sync-dmb.specs
@@ -3800,11 +3800,11 @@ events:
         gcc version 15.2.0 (devkitARM) 
         COMPILER_PATH=C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/;C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/;C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/bin/
         LIBRARY_PATH=C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/;C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/armv6k/fpu/;C:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi/lib/armv6k/fpu/;C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/;C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/;C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/;C:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi/lib/
-        COLLECT_GCC_OPTIONS= '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-LC:/msys64/opt/devkitpro/libctru/lib' '-LC:/msys64/opt/devkitpro/portlibs/3ds/lib' '-specs=3dsx.specs' '-v' '-o' 'cmTC_440bb.elf' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'cmTC_440bb.elf.'
-         C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/collect2.exe -plugin C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\msys64\\tmp\\ccjnUgIS.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lg -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lsysbase --defsym=__sync_synchronize=__sync_synchronize_dmb --sysroot=C:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi -X -T C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/3dsx.ld -d --emit-relocs --use-blx --gc-sections -o cmTC_440bb.elf C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/armv6k/fpu/3dsx_crt0.o C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crti.o C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crtbegin.o -LC:/msys64/opt/devkitpro/libctru/lib -LC:/msys64/opt/devkitpro/portlibs/3ds/lib -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/armv6k/fpu -LC:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi/lib/armv6k/fpu -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0 -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib -LC:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi/lib CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.o -lctru -lm --start-group -lgcc -lg -lc -lsysbase --end-group C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crtend.o C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crtn.o
-        COLLECT_GCC_OPTIONS= '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-LC:/msys64/opt/devkitpro/libctru/lib' '-LC:/msys64/opt/devkitpro/portlibs/3ds/lib' '-specs=3dsx.specs' '-v' '-o' 'cmTC_440bb.elf' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'cmTC_440bb.elf.'
-        /opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc.exe -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft -mword-relocations -ffunction-sections -D__3DS__  -g -O2 -DNDEBUG -L/opt/devkitpro/libctru/lib -L/opt/devkitpro/portlibs/3ds/lib -specs=3dsx.specs -v CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.o -o cmTC_440bb.elf  -lctru -lm
-        make[1]: Leaving directory '/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/CMakeFiles/CMakeScratch/TryCompile-gSZvUl'
+        COLLECT_GCC_OPTIONS= '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-LC:/msys64/opt/devkitpro/libctru/lib' '-LC:/msys64/opt/devkitpro/portlibs/3ds/lib' '-specs=3dsx.specs' '-v' '-o' 'cmTC_7231a.elf' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'cmTC_7231a.elf.'
+         C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/collect2.exe -plugin C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\msys64\\tmp\\ccPazqVY.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lg -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lsysbase --defsym=__sync_synchronize=__sync_synchronize_dmb --sysroot=C:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi -X -T C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/3dsx.ld -d --emit-relocs --use-blx --gc-sections -o cmTC_7231a.elf C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/armv6k/fpu/3dsx_crt0.o C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crti.o C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crtbegin.o -LC:/msys64/opt/devkitpro/libctru/lib -LC:/msys64/opt/devkitpro/portlibs/3ds/lib -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/armv6k/fpu -LC:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi/lib/armv6k/fpu -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0 -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib -LC:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi/lib CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.o -lctru -lm --start-group -lgcc -lg -lc -lsysbase --end-group C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crtend.o C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crtn.o
+        COLLECT_GCC_OPTIONS= '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-LC:/msys64/opt/devkitpro/libctru/lib' '-LC:/msys64/opt/devkitpro/portlibs/3ds/lib' '-specs=3dsx.specs' '-v' '-o' 'cmTC_7231a.elf' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'cmTC_7231a.elf.'
+        /opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc.exe -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft -mword-relocations -ffunction-sections -D__3DS__  -g -O2 -DNDEBUG -L/opt/devkitpro/libctru/lib -L/opt/devkitpro/portlibs/3ds/lib -specs=3dsx.specs -v CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.o -o cmTC_7231a.elf  -lctru -lm
+        make[1]: Leaving directory '/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/CMakeFiles/CMakeScratch/TryCompile-BT3xTN'
         
       exitCode: 0
   -
@@ -3839,13 +3839,13 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/CMakeFiles/CMakeScratch/TryCompile-gSZvUl']
+        ignore line: [Change Dir: '/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/CMakeFiles/CMakeScratch/TryCompile-BT3xTN']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake.exe -E env VERBOSE=1 /usr/bin/make.exe -f Makefile cmTC_440bb/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_440bb.dir/build.make CMakeFiles/cmTC_440bb.dir/build]
-        ignore line: [make[1]: Entering directory '/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/CMakeFiles/CMakeScratch/TryCompile-gSZvUl']
-        ignore line: [Building C object CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.o]
-        ignore line: [/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc.exe  -isystem /opt/devkitpro/libctru/include -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft -mword-relocations -ffunction-sections -D__3DS__  -g -O2 -DNDEBUG   -v -o CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/cmake.exe -E env VERBOSE=1 /usr/bin/make.exe -f Makefile cmTC_7231a/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_7231a.dir/build.make CMakeFiles/cmTC_7231a.dir/build]
+        ignore line: [make[1]: Entering directory '/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/CMakeFiles/CMakeScratch/TryCompile-BT3xTN']
+        ignore line: [Building C object CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.o]
+        ignore line: [/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc.exe  -isystem /opt/devkitpro/libctru/include -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft -mword-relocations -ffunction-sections -D__3DS__  -g -O2 -DNDEBUG   -v -o CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\msys64\\opt\\devkitpro\\devkitARM\\bin\\arm-none-eabi-gcc.exe]
         ignore line: [Target: arm-none-eabi]
@@ -3853,8 +3853,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.2.0 (devkitARM) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-isystem' 'C:/msys64/opt/devkitpro/libctru/include'  '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.o' '-c' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'CMakeFiles/cmTC_440bb.dir/']
-        ignore line: [ C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/cc1.exe -quiet -v -imultilib armv6k/fpu -iprefix C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/ -isysroot C:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi -D__USES_INITFINI__ -D __3DS__ -D NDEBUG -isystem C:/msys64/opt/devkitpro/libctru/include C:/msys64/usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_440bb.dir/ -dumpbase CMakeCCompilerABI.c -dumpbase-ext .c -mtune=mpcore -mfloat-abi=hard -mtp=soft -mword-relocations -marm -mlibarch=armv6k -march=armv6k -g -O2 -version -ffunction-sections -o C:\\msys64\\tmp\\ccfLAP3G.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-isystem' 'C:/msys64/opt/devkitpro/libctru/include'  '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.o' '-c' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'CMakeFiles/cmTC_7231a.dir/']
+        ignore line: [ C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/cc1.exe -quiet -v -imultilib armv6k/fpu -iprefix C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/ -isysroot C:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi -D__USES_INITFINI__ -D __3DS__ -D NDEBUG -isystem C:/msys64/opt/devkitpro/libctru/include C:/msys64/usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_7231a.dir/ -dumpbase CMakeCCompilerABI.c -dumpbase-ext .c -mtune=mpcore -mfloat-abi=hard -mtp=soft -mword-relocations -marm -mlibarch=armv6k -march=armv6k -g -O2 -version -ffunction-sections -o C:\\msys64\\tmp\\cc1WpWYL.s]
         ignore line: [GNU C23 (devkitARM) version 15.2.0 (arm-none-eabi)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.18-GMP]
         ignore line: []
@@ -3872,8 +3872,8 @@ events:
         ignore line: [ C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 60dee095c975adca225ee59460a542fa]
-        ignore line: [COLLECT_GCC_OPTIONS='-isystem' 'C:/msys64/opt/devkitpro/libctru/include'  '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.o' '-c' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'CMakeFiles/cmTC_440bb.dir/']
-        ignore line: [ C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/bin/as.exe -march=armv6k -mfloat-abi=hard -meabi=5 -o CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.o C:\\msys64\\tmp\\ccfLAP3G.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-isystem' 'C:/msys64/opt/devkitpro/libctru/include'  '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.o' '-c' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'CMakeFiles/cmTC_7231a.dir/']
+        ignore line: [ C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/bin/as.exe -march=armv6k -mfloat-abi=hard -meabi=5 -o CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.o C:\\msys64\\tmp\\cc1WpWYL.s]
         ignore line: [COMPILER_PATH=C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/]
         ignore line: [C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/]
         ignore line: [C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/bin/]
@@ -3884,9 +3884,9 @@ events:
         ignore line: [C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/]
         ignore line: [C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/]
         ignore line: [C:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-isystem' 'C:/msys64/opt/devkitpro/libctru/include'  '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.o' '-c' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.']
-        ignore line: [Linking C executable cmTC_440bb.elf]
-        ignore line: [/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_440bb.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-isystem' 'C:/msys64/opt/devkitpro/libctru/include'  '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.o' '-c' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.']
+        ignore line: [Linking C executable cmTC_7231a.elf]
+        ignore line: [/usr/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_7231a.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [Reading specs from C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/3dsx.specs]
         ignore line: [Reading specs from C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/sync-dmb.specs]
@@ -3908,13 +3908,13 @@ events:
         ignore line: [C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/]
         ignore line: [C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/]
         ignore line: [C:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS= '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-LC:/msys64/opt/devkitpro/libctru/lib' '-LC:/msys64/opt/devkitpro/portlibs/3ds/lib' '-specs=3dsx.specs' '-v' '-o' 'cmTC_440bb.elf' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'cmTC_440bb.elf.']
-        link line: [ C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/collect2.exe -plugin C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\msys64\\tmp\\ccjnUgIS.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lg -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lsysbase --defsym=__sync_synchronize=__sync_synchronize_dmb --sysroot=C:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi -X -T C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/3dsx.ld -d --emit-relocs --use-blx --gc-sections -o cmTC_440bb.elf C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/armv6k/fpu/3dsx_crt0.o C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crti.o C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crtbegin.o -LC:/msys64/opt/devkitpro/libctru/lib -LC:/msys64/opt/devkitpro/portlibs/3ds/lib -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/armv6k/fpu -LC:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi/lib/armv6k/fpu -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0 -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib -LC:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi/lib CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.o -lctru -lm --start-group -lgcc -lg -lc -lsysbase --end-group C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crtend.o C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS= '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-LC:/msys64/opt/devkitpro/libctru/lib' '-LC:/msys64/opt/devkitpro/portlibs/3ds/lib' '-specs=3dsx.specs' '-v' '-o' 'cmTC_7231a.elf' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'cmTC_7231a.elf.']
+        link line: [ C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/collect2.exe -plugin C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\msys64\\tmp\\ccPazqVY.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lg -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lsysbase --defsym=__sync_synchronize=__sync_synchronize_dmb --sysroot=C:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi -X -T C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/3dsx.ld -d --emit-relocs --use-blx --gc-sections -o cmTC_7231a.elf C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/armv6k/fpu/3dsx_crt0.o C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crti.o C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crtbegin.o -LC:/msys64/opt/devkitpro/libctru/lib -LC:/msys64/opt/devkitpro/portlibs/3ds/lib -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/armv6k/fpu -LC:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi/lib/armv6k/fpu -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0 -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc -LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib -LC:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi/lib CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.o -lctru -lm --start-group -lgcc -lg -lc -lsysbase --end-group C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crtend.o C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crtn.o]
           arg [C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/collect2.exe] ==> ignore
           arg [-plugin] ==> ignore
           arg [C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/liblto_plugin.dll] ==> ignore
           arg [-plugin-opt=C:/msys64/opt/devkitpro/devkitARM/bin/../libexec/gcc/arm-none-eabi/15.2.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:msys64tmpccjnUgIS.res] ==> ignore
+          arg [-plugin-opt=-fresolution=C:msys64tmpccPazqVY.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lg] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -3929,7 +3929,7 @@ events:
           arg [--use-blx] ==> ignore
           arg [--gc-sections] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_440bb.elf] ==> ignore
+          arg [cmTC_7231a.elf] ==> ignore
           arg [C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/armv6k/fpu/3dsx_crt0.o] ==> obj [C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib/armv6k/fpu/3dsx_crt0.o]
           arg [C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crti.o] ==> obj [C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crti.o]
           arg [C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crtbegin.o] ==> obj [C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crtbegin.o]
@@ -3942,7 +3942,7 @@ events:
           arg [-LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc] ==> dir [C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc]
           arg [-LC:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib] ==> dir [C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/../../../../arm-none-eabi/lib]
           arg [-LC:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi/lib] ==> dir [C:/msys64/opt/devkitpro/devkitARM/bin/../arm-none-eabi/lib]
-          arg [CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.o] ==> ignore
+          arg [CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.o] ==> ignore
           arg [-lctru] ==> lib [ctru]
           arg [-lm] ==> lib [m]
           arg [--start-group] ==> ignore
@@ -3953,9 +3953,9 @@ events:
           arg [--end-group] ==> ignore
           arg [C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crtend.o] ==> obj [C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crtend.o]
           arg [C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crtn.o] ==> obj [C:/msys64/opt/devkitpro/devkitARM/bin/../lib/gcc/arm-none-eabi/15.2.0/armv6k/fpu/crtn.o]
-        ignore line: [COLLECT_GCC_OPTIONS= '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-LC:/msys64/opt/devkitpro/libctru/lib' '-LC:/msys64/opt/devkitpro/portlibs/3ds/lib' '-specs=3dsx.specs' '-v' '-o' 'cmTC_440bb.elf' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'cmTC_440bb.elf.']
-        ignore line: [/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc.exe -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft -mword-relocations -ffunction-sections -D__3DS__  -g -O2 -DNDEBUG -L/opt/devkitpro/libctru/lib -L/opt/devkitpro/portlibs/3ds/lib -specs=3dsx.specs -v CMakeFiles/cmTC_440bb.dir/CMakeCCompilerABI.o -o cmTC_440bb.elf  -lctru -lm]
-        ignore line: [make[1]: Leaving directory '/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/CMakeFiles/CMakeScratch/TryCompile-gSZvUl']
+        ignore line: [COLLECT_GCC_OPTIONS= '-mtune=mpcore' '-mfloat-abi=hard' '-mtp=soft' '-mword-relocations' '-ffunction-sections' '-D' '__3DS__' '-g' '-O2' '-D' 'NDEBUG' '-LC:/msys64/opt/devkitpro/libctru/lib' '-LC:/msys64/opt/devkitpro/portlibs/3ds/lib' '-specs=3dsx.specs' '-v' '-o' 'cmTC_7231a.elf' '-marm' '-mlibarch=armv6k' '-march=armv6k' '-dumpdir' 'cmTC_7231a.elf.']
+        ignore line: [/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc.exe -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft -mword-relocations -ffunction-sections -D__3DS__  -g -O2 -DNDEBUG -L/opt/devkitpro/libctru/lib -L/opt/devkitpro/portlibs/3ds/lib -specs=3dsx.specs -v CMakeFiles/cmTC_7231a.dir/CMakeCCompilerABI.o -o cmTC_7231a.elf  -lctru -lm]
+        ignore line: [make[1]: Leaving directory '/c/Users/aloaf/Documents/GitHub/sonic3air/Oxygen/sonic3air/build/_3ds/extern/NovaGL/build/CMakeFiles/CMakeScratch/TryCompile-BT3xTN']
         ignore line: []
         ignore line: []
         collapse library dir [C:/msys64/opt/devkitpro/libctru/lib] ==> [C:/msys64/opt/devkitpro/libctru/lib]

@@ -20,7 +20,7 @@ void Upscaler::startup()
 {
 	FileHelper::loadShader(mUpscalerSoftShader,             L"data/shader/upscaler_soft.shader", "Standard");
 	FileHelper::loadShader(mUpscalerSoftShaderScanlines,    L"data/shader/upscaler_soft.shader", "Scanlines");
-	#if !defined(PLATFORM_VITA)
+	#if !defined(PLATFORM_3DS)
 	FileHelper::loadShader(mUpscalerXBRZMultipassShader[0], L"data/shader/upscaler_xbrz-freescale-pass0.shader", "Standard");
 	FileHelper::loadShader(mUpscalerXBRZMultipassShader[1], L"data/shader/upscaler_xbrz-freescale-pass1.shader", "Standard");
 	FileHelper::loadShader(mUpscalerHQ2xShader,             L"data/shader/upscaler_hqx.shader", "Standard_2x");

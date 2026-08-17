@@ -284,11 +284,14 @@ NOVAGL_NEAR_CLIP:BOOL=ON
 //Strip per-draw GL validation + pointer guards
 NOVAGL_NO_DEBUG:BOOL=OFF
 
+//No help, variable specified on the command line.
+NOVAGL_NO_SPLASHSCREEN:UNINITIALIZED=1
+
 //Enable the safe NovaGL speedhack bundle (NO_DEBUG + DRAW_SPEEDHACK)
 NOVAGL_SPEEDHACKS:BOOL=OFF
 
 //Show the animated NovaGL boot splashscreen
-NOVAGL_SPLASHSCREEN:BOOL=ON
+NOVAGL_SPLASHSCREEN:BOOL=OFF
 
 //Use VBO stream
 NOVA_VBO_STREAM:BOOL=ON
